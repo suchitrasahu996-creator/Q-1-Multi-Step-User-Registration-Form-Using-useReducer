@@ -1,5 +1,16 @@
 import React, { useReducer } from "react";
-import MultiStepForm from "./MutliStepReducer";
+import reducer from "./MutliStepReducer";
+const initialState = {
+  step: 1,
+  values: {
+    name: "",
+    email: "",
+    username: "",
+    password: "",
+  },
+  error: {},
+  isSubmitted: false,
+};
 export default function MultiStepForm() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { step, values, isSubmitted } = state;
@@ -16,7 +27,7 @@ export default function MultiStepForm() {
       <div>
         <h2>Form Submitted</h2>
         <pre>{JSON.stringify(values, null, 2)}</pre>
-        <button onClick={() => dispatch({ type: ACTIONS.RESET_FORM })}>
+        <button onClick={() => dispatch({ type:ACTIONS.RESET_FORM })}>
           RESET
         </button>
       </div>
@@ -33,6 +44,8 @@ export default function MultiStepForm() {
             value={values.name}
             onChange={handleChange}
           />
+          <br></br>
+          <br></br>
           <input
             name="email"
             placeholder="Email"

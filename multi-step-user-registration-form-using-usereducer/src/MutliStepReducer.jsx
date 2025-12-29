@@ -1,15 +1,5 @@
 import React from "react";
-const initialState = {
-  step: 1,
-  values: {
-    name: "",
-    email: "",
-    username: "",
-    password: "",
-  },
-  error: {},
-  isSubmitted: false,
-};
+
 const ACTIONS = {
   UPDATE_FIELD: "UPDATED_FIELD",
   NEXT_STEP: "NEXT_STEP",
