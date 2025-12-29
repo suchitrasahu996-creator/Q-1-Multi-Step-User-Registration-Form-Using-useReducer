@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import reducer from "./MutliStepReducer";
+import reducer, { ACTIONS } from "./MutliStepReducer";
 const initialState = {
   step: 1,
   values: {
@@ -71,10 +71,14 @@ export default function MultiStepForm() {
         </>
       )}
       {step === 3 && (
-        <>
+        <div style={{lineHeight:"1.5"}}>
           <h4>Review</h4>
-          <pre>{JSON.stringly(values, null, 2)}</pre>
-        </>
+          <div><strong>NAME:</strong>{values.name || "--"}</div>
+           <div><strong>EMAIL:</strong>{values.email || "--"}</div>
+            <div><strong>USERNAME:</strong>{values.username || "--"}</div>
+             <div><strong>PASSWORD:</strong>{values.password ?"****": "--"}</div>
+
+        </div>
       )}
       <div style={{ marginTop: 16 }}>
         {step > 1 && (

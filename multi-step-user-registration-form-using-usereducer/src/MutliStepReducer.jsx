@@ -1,6 +1,6 @@
 import React from "react";
 
-const ACTIONS = {
+ export const ACTIONS = {
   UPDATE_FIELD: "UPDATED_FIELD",
   NEXT_STEP: "NEXT_STEP",
   PREVIOUS_STEP: "PREVIOUS_STEP",
